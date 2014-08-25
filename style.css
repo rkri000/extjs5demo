@@ -1,0 +1,72 @@
+.main-menu {
+    background: url(https://demo.zarafa.com/webapp/client/resources/images/tabbackground.jpg);
+}
+
+.main-menu span {
+    color: white;
+}
+
+span {
+    text-shadow: 1px 2px 2px #bcbcbc;
+}
+
+.main-menu .x-btn-over span,
+.main-menu .x-btn-focus span {
+    color: black;
+}
+
+.ico-note {
+    background: url(https://demo.zarafa.com/webapp/client/resources/icons/new/note_yellow.png) no-repeat!important;
+}
+
+.ico-task {
+    background: url(https://demo.zarafa.com/webapp/client/resources/icons/new/tasks.png) no-repeat!important;
+}
+
+.ico-cal {
+    background: url(https://demo.zarafa.com/webapp/client/resources/icons/new/calendar.png) no-repeat!important;
+}
+
+.ico-meeting {
+    background: url(https://demo.zarafa.com/webapp/client/resources/icons/new/calendar_blue.png) no-repeat!important;
+}
+
+.ico-contact {
+    background: url(https://demo.zarafa.com/webapp/client/resources/icons/new/contact_color.png) no-repeat!important;
+}
+
+.ico-inbox {
+    background: url(https://demo.zarafa.com/webapp/client/resources/icons/new/folder_mail.png) no-repeat!important;
+}
+
+.ico-mail {
+    background: url(https://demo.zarafa.com/webapp/client/resources/icons/new/mail_read.png) no-repeat!important;
+}
+
+.ico-folder {
+    background: url(https://demo.zarafa.com/webapp/client/resources/icons/new/folder.png) no-repeat!important;
+}
+
+.ico-home {
+    background: url(https://demo.zarafa.com/webapp/client/resources/icons/icon_store.gif) no-repeat!important;
+}
+
+.ico-distr {
+    background: url(https://demo.zarafa.com/webapp/client/resources/icons/new/distlist.png) no-repeat!important;
+}
+
+.ico-trash {
+    background: url(https://demo.zarafa.com/webapp/client/resources/icons/new/trash.png) no-repeat!important;
+}
+
+.ico-draft {
+    background: url(https://demo.zarafa.com/webapp/client/resources/icons/new/drafts.png) no-repeat!important;
+}
+
+.ico-outbox {
+    background: url(https://demo.zarafa.com/webapp/client/resources/icons/new/folder_outbox.png) no-repeat!important;
+}
+
+.ico-fav {
+    background: url(https://demo.zarafa.com/webapp/client/resources/icons/new/folder_favs.png) no-repeat!important;
+}
