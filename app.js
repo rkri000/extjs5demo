@@ -6,6 +6,7 @@
 
    Important concepts that are currently not implemented yet in this demo app are:
 
+   - event listeners
    - MVC / MVVM pattern
    - databinding for stores and tree
    - i18n & l10n
@@ -26,7 +27,7 @@ var contactsStore = {
 
 var emailsStore = {
     fields:
-        ["name",     "email",                "subject",              "received"],
+        ["name",     "email",                "subject",             "received"],
     data: [
         ["Lisa",    "lisa@simpsons.com",    "A new message",        "01-08-2014 12:03"],
         ["Bart",    "bart@simpsons.com",    "Please reply",         "01-08-2014 12:02"],
@@ -81,8 +82,8 @@ var tree = {
             text: "Public Folders", expanded: true, children: [
                 { text: "Favorites",    iconCls: "ico-fav", leaf: true },
                 { text: "Public Folders", children: [
-                        { text: "Contacts", iconCls: "ico-contact", leaf: true },
-                        { text: "Office",   iconCls: "ico-contact", leaf: true }
+                    { text: "Contacts", iconCls: "ico-contact", leaf: true },
+                    { text: "Office",   iconCls: "ico-contact", leaf: true }
                 ] }
             ]
         }
@@ -108,17 +109,11 @@ Ext.application({
                  width: 190,
                  split: true,
                  collapsible: true,
-                 tbar: [{
-                     text: "New...",
-                     handler: "onClickButton",
-                     menu: newMenuItems
-                 }, {
-                     text: "Show all",
-                     enableToggle: true
-                 }, {
-                     text: "Refresh",
-                     iconCls: "x-tbar-loading"
-                 }],
+                 tbar: [
+                    { text: "New...",   handler: "onClickButton", menu: newMenuItems },
+                    { text: "Show all", enableToggle: true },
+                    { text: "Refresh",  iconCls: "x-tbar-loading" }
+                 ],
                  useArrows: true,
                  rootVisible: false,
                  root: tree
@@ -144,22 +139,22 @@ Ext.application({
                             xtype: "grid",
                             width: "50%",
                             region: "center",
-                            dockedItems: [{
-                                xtype: "pagingtoolbar",
-                                store: emailsStore,
-                                dock: "top",
-                                displayInfo: true
-                            }, {
-                                xtype: "toolbar",
-                                dock: "top",
-                                items: [{
-                                    xtype: "textfield",
-                                    placeHolder: "Search"
-                                }, {
-                                    xtype: "button",
-                                    text: "Search"
-                                }]
-                            }],
+                            dockedItems: [
+                                {
+                                    xtype: "pagingtoolbar",
+                                    dock: "top",
+                                    store: emailsStore,
+                                    displayInfo: true
+                                },
+                                {
+                                    xtype: "toolbar",
+                                    dock: "top",
+                                    items: [
+                                        { xtype: "textfield" },
+                                        { xtype: "button", text: "Search" }
+                                    ]
+                                }
+                            ],
                             store: emailsStore,
                             columns: [
                                 { text: "Name",     dataIndex: "name" },
@@ -185,13 +180,15 @@ Ext.application({
                      title: "Contacts",
                      iconCls: "ico-contact",
                      plugins: "rowediting",
-                     dockedItems: [{
-                         xtype: "pagingtoolbar",
-                         store: contactsStore,
-                         pageSize: 2,
-                         dock: "top",
-                         displayInfo: true
-                     }],
+                     dockedItems: [
+                        {
+                            xtype: "pagingtoolbar",
+                            store: contactsStore,
+                            pageSize: 2,
+                            dock: "top",
+                            displayInfo: true
+                        }
+                     ],
                      store: contactsStore,
                      columns: {
                          defaults: {
